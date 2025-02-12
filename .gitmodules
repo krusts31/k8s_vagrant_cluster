@@ -1,0 +1,3 @@
+[submodule "vagrant-kubeadm-kubernetes"]
+	path = vagrant-kubeadm-kubernetes
+	url = https://github.com/techiescamp/vagrant-kubeadm-kubernetes

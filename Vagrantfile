@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "master" do |master|
     master.vm.hostname = "master"
-    controlplane.vm.network "private_network", ip: 10.0.0.10
+    master.vm.network "private_network", ip: "10.0.0.10"
     master.vm.network "public_network", ip: "192.168.8.181", bridge: "en0: Wi-Fi (AirPort)"
 
     master.vm.provider "virtualbox" do |vb|
@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "worker" do |worker|
     worker.vm.hostname = "worker"
-    controlplane.vm.network "private_network", ip: 10.0.0.11
+    worker.vm.network "private_network", ip: "10.0.0.11"
     worker.vm.network "public_network", ip: "192.168.8.182", bridge: "en0: Wi-Fi (AirPort)"
     worker.vm.provider "virtualbox" do |vb|
       vb.name = "WorkerNode"
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "worker2" do |worker2|
     worker2.vm.hostname = "worker2"
-    controlplane.vm.network "private_network", ip: 10.0.0.12
+    worker2.vm.network "private_network", ip: "10.0.0.12"
     worker2.vm.network "public_network", ip: "192.168.8.183", bridge: "en0: Wi-Fi (AirPort)"
     worker2.vm.provider "virtualbox" do |vb|
       vb.name = "WorkerNode2"
